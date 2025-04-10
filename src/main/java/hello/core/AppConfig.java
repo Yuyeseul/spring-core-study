@@ -11,9 +11,10 @@ import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+// @Configuration 없어도 스프링 컨테이너에 스프링 빈으로 등록된다.
+// 그러나 싱글톤이 보장이 안된다. -> bean = class hello.core.AppConfig
 @Configuration
 public class AppConfig {
-
 
     // @Bean memberService -> new MemoryMemberRepository()
     // @Bean orderService -> new MemoryMemberRepository()

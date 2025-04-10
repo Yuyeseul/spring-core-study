@@ -29,4 +29,14 @@ public class ConfigurationSingletonTest {
         Assertions.assertThat(memberService.getMemberRepository()).isSameAs(memberRepository);
         Assertions.assertThat(orderService.getMemberRepository()).isSameAs(memberRepository);
     }
+
+    @Test
+    void configurationDeep(){
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        AppConfig bean = ac.getBean(AppConfig.class);  // 스프링 빈으로 등록된다.
+
+        System.out.println("bean = " + bean.getClass());
+        // bean = class hello.core.AppConfig$$SpringCGLIB$$0
+        // AppConfig 가 아닌 AppConfig$$SpringCGLIB(자식 타입) 가 등록되어 있고 싱글톤을 보장해 줌
+    }
 }
