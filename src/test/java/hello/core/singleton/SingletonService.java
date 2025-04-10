@@ -1,7 +1,5 @@
 package hello.core.singleton;
 
-import hello.core.member.MemberService;
-
 public class SingletonService {
 
     // 1. static  영역에 객체를 딱 1개만 생성해둔다.
