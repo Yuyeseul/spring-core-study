@@ -1,7 +1,6 @@
 package hello.core.lifecycle;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +18,8 @@ public class BeanLifeCycleTest {
     @Configuration
     static class LifeCycleConfig {
 
+        // 빈 생명주기 콜백 방법 2. 설정 정보에 초기화, 종료 메서드 지정
+//        @Bean(initMethod = "init", destroyMethod = "close")
         @Bean
         public NetworkClient networkClient() {
             NetworkClient networkClient = new NetworkClient();
